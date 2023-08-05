@@ -1,0 +1,15 @@
+@use '@utils/styles';
+.post{
+    &__content{
+      text-align: justify;
+      @include styles.desktop(){
+        font-size: 2rem;
+      }
+
+    }
+  &__image{
+    img{
+      width: 60vw;
+    }
+  }
+}

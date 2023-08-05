@@ -1,0 +1,42 @@
+@use '@utils/styles';
+@import "@pages/contact/Contact.scss";
+
+$modalLeft: 0.4vw;
+.subscribe-modal{
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  //left: auto;
+  margin-left:0.5vw;
+  top: 0;
+  width: 250px; /* Full width */
+  // height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  //background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(255,255,255,1);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  @include styles.desktop(){
+    margin-left: 25vw;
+    margin-top: 25vh;
+  }
+
+  &--fade-in{
+    animation: fade-in 5s;
+  }
+
+  &__form{
+    @extend .contact__form;
+    &-input{
+    @extend .contact__form-input;
+    }
+    &-submit{
+      @extend .contact__form-submit;
+      min-width: 100px;
+    }
+  }
+
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

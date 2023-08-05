@@ -1,0 +1,36 @@
+@use '@utils/styles';
+$widthPage:60vw;
+.pages{
+  &__main{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+    @include styles.desktop(){
+      width: $widthPage;
+    }
+
+  }
+
+  &__form{
+    @include styles.desktop(){
+      width: $widthPage !important;
+    }
+    &-block{
+
+    }
+
+
+    &-submit{
+      background-color: red!important;
+      color: white!important;
+      font-weight: bold!important;
+      min-width: 200px;
+    }
+    &-input{
+      width: 18rem;
+      @include styles.desktop(){
+        width: 34rem !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@use '@utils/styles';
+.upload{
+  &__main{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__form{
+    &-submit{
+      background-color: red!important;
+      color: white!important;
+      font-weight: bold!important;
+      min-width: 200px;
+    }
+    &-input{
+      width: 18rem;
+      @include styles.desktop(){
+        width: 34rem !important;
+      }
+    }
+  }
+}

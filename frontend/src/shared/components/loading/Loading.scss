@@ -1,0 +1,74 @@
+@use '@utils/styles';
+
+.loading{
+  height: 90vh;
+  @include styles.landscape(){
+    margin-top: 40px;
+    height: 50vh;
+  }
+  @include styles.desktop(){
+    height: 90vh;
+  }
+
+  &__text{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2rem;
+    animation:  text 3s ease-in-out infinite;
+    @include styles.desktop(){
+      font-size: 4rem;
+    }
+
+
+  }
+
+  &__ring{
+    border-radius: 50%;
+
+    &:before{
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      margin-left: -25px;
+      margin-top: -70px;
+      content: ''; // el content es obligatorio
+      border-radius: 50%;
+      box-shadow:  0 0 5px black;
+      animation: ring 2s linear infinite;
+    }
+    @include  styles.desktop(){
+      &:before{
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        margin-left: -45px;
+        margin-top: -140px;
+        content: ''; // el content es obligatorio
+        border-radius: 50%;
+        box-shadow:  0 0 5px black;
+        animation: ring 2s linear infinite;
+      }
+    }
+
+  }
+}
+@keyframes ring {
+  0%{
+    transform: rotate(0deg);
+    box-shadow: 1px 5px 2px #e65c00;
+  }
+  50%{
+    transform: rotate(180deg);
+    box-shadow: 1px 5px 2px #18b201;
+  }
+  100%{
+    transform: rotate(360deg);
+    box-shadow: 1px 5px 2px #0456c8;
+  }
+}
+
+@keyframes text {
+  0%{
+    color: #0456c8;
+  }
+}

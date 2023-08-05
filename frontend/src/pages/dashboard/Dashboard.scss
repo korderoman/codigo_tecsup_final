@@ -1,0 +1,9 @@
+@use '@utils/styles';
+.dashboard{
+  &__sidebar{
+    @include styles.desktop(){
+      width: 300px;
+    }
+
+  }
+}

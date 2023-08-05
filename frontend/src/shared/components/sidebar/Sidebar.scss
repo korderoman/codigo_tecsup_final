@@ -1,0 +1,53 @@
+@use '@utils/styles';
+@import "bootstrap";
+// https://www.youtube.com/watch?v=cB1c26fRLfA
+.sidebar{
+  &__logo{
+    width: 30%;
+    @include styles.desktop(){
+      width: 80%;
+    }
+  }
+
+  &__li{
+    width: 100%;
+    a:hover{
+      @extend  .active;
+      background-color: #0c4128 !important;
+      font-weight: bold !important;
+    }
+    a:active{
+      @extend .active;
+      color: red !important;
+    }
+
+
+  }
+  &__hr{
+    border: 1px solid white;
+  }
+
+  &__logout{
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+
+  @include styles.desktop(){
+    .navbar .container-fluid, .navbar-expand-lg .navbar-collapse, .navbar-expand-lg .navbar-nav{
+      flex-direction: column;
+      align-items: start;
+    }
+    .navbar{
+      width: 100%;
+      height: 98vh;
+      align-items: start;
+    }
+    /*  .navbar-brand{
+        margin-left: 0.5rem;
+      }*/
+  }
+}
+
+

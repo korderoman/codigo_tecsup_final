@@ -1,0 +1,37 @@
+@use "@utils/styles";
+@import "bootstrap";
+
+$text_hover:red;
+.header{
+  &__logo{
+    width: 10%;
+    @include styles.desktop(){
+      width: 10%;
+    }
+  }
+  &__li{
+    a:hover{
+      @extend  .active;
+      background-color: $text_hover !important;
+      font-weight: bold !important;
+      color: white !important;
+    }
+  }
+  &__navbar{
+    background-color: black;
+  }
+  &__link--active{
+    @extend .nav-link;
+    @extend  .text-white;
+    @extend  .active;
+    @extend .fw-semibold;
+    background-color: $text_hover;
+  }
+  &__link--no-active{
+    @extend .nav-link;
+    @extend  .text-secondary;
+    @extend .fw-semibold;
+  }
+}
+
+

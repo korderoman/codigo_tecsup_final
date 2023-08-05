@@ -1,0 +1,99 @@
+@use '@utils/styles';
+
+.login{
+  &__body{
+    @include  styles.desktop(){
+      display: flex;
+      justify-content: center;
+
+    }
+    .card{
+      border: none;
+    }
+
+
+
+  }
+  &__card{
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include styles.tablet(){
+      padding-top: 10px;
+      height: 100vh;
+    }
+    @include styles.desktop() {
+      display: flex;
+      flex-direction: row;
+      height: 90vh;
+    }
+    &-jumbotron{
+      width: 100%;
+      min-height: 520px;
+      overflow-y: hidden;
+      @include styles.desktop(){
+          display: flex;
+        }
+    }
+    &-body{
+      background-color: red;
+      color: white;
+      border-radius: 10%;
+    }
+    &-logo{
+      width: 40%;
+    }
+  }
+  &__jumbotron{
+    display: none;
+    @include styles.desktop(){
+      display: flex;
+    }
+  }
+}
+
+.logo__content{
+  text-align: center;
+}
+
+.btn-submit{
+  background-color: #8faadc;
+}
+
+/*!*!/ Small devices (landscape phones, 576px and up)*!
+@media (min-width: 576px) {  }
+
+!*!/ Medium devices (tablets, 768px and up)*!
+@media (min-width: 768px) {
+  .login__card{
+    padding-top: 10px;
+    height: 100vh;
+  }
+}
+
+!*!/ Large devices (desktops, 992px and up)*!
+@media (min-width: 992px) {
+  .login__jumbotron{
+    display: flex;
+  }
+  .login__card{
+    display: flex;
+    flex-direction: row;
+
+  }
+  .login__body{
+    display: flex;
+    justify-content: center;
+    .card{
+      border: none;
+    }
+  }
+}
+
+!*!/ X-Large devices (large desktops, 1200px and up)*!
+@media (min-width: 1200px) {  }
+
+!*!/ XX-Large devices (larger desktops, 1400px and up)*!
+@media (min-width: 1400px) {  }*/
